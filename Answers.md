@@ -18,7 +18,7 @@
 
 1.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 
-    Redux-thunk lets us return promises from our aciton creators.
+    Redux-thunk lets us return a function instead of an action from our action creators.
 
 1.  Which `react-redux` method links up our `components` with our `redux store`?
 
