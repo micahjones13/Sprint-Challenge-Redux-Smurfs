@@ -2,14 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getData, addSmurfAction, deleteSmurfAction } from '../actions';
 import Smurfs from './Smurfs';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
+
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
  Just remember, `how do I `connect` my components to redux?`
  `How do I ensure that my component links the state to props?`
  */
+
+
+
+
 class App extends React.Component {
   state = {
     smurf: {
@@ -46,7 +50,7 @@ class App extends React.Component {
     return (
       <div className="App">
     
-      
+      <div className = 'smurf-list'>
       {
         this.props.smurfs.map(smurf => {
         return(
@@ -58,6 +62,7 @@ class App extends React.Component {
         )
         })
       } 
+      </div>
       <form onSubmit = {this.addSmurf}>
         <input
           type="text"
