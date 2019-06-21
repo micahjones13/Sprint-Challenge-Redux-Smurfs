@@ -23,6 +23,10 @@ export const ADD_START = 'ADD_START';
 export const ADD_SUCCESS = 'ADD_SUCCESS';
 export const ADD_FAIL = 'ADD_FAIL';
 
+export const DELETE_START = 'DELETE_START';
+export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+export const DELETE_FAIL = 'DELETE_FAIL';
+
 export const getData = () => dispatch => {
   dispatch({ type: FETCH_START });
   axios
@@ -48,5 +52,19 @@ export const addSmurfAction = (smurf) => dispatch => {
     .catch(err => {
       console.log(err.response);
       dispatch({ type: ADD_FAIL, payload: err.response })
+    })
+}
+
+export const deleteSmurfAction = (id) => dispatch => {
+  dispatch ({ type: DELETE_START });
+  axios
+  .delete(`http://localhost:3333/smurfs/${id}`)
+    .then(res => {
+      console.log('delete', res);
+      dispatch ({ type: DELETE_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      console.log('delete', err);
+      dispatch({ type: DELETE_FAIL, payload: err.response })
     })
 }
