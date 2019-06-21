@@ -50,8 +50,8 @@ export const addSmurfAction = (smurf) => dispatch => {
       dispatch ({ type: ADD_SUCCESS, payload: res.data })
     })
     .catch(err => {
-      console.log(err.response);
-      dispatch({ type: ADD_FAIL, payload: err.response })
+      console.log('add' , err.response.data.Error);
+      dispatch({ type: ADD_FAIL, payload: err.response.data.Error })
     })
 }
 
@@ -64,7 +64,7 @@ export const deleteSmurfAction = (id) => dispatch => {
       dispatch ({ type: DELETE_SUCCESS, payload: res.data })
     })
     .catch(err => {
-      console.log('delete', err);
+      console.log('delete', err.data);
       dispatch({ type: DELETE_FAIL, payload: err.response })
     })
 }

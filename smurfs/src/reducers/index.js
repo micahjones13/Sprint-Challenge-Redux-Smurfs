@@ -92,7 +92,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         deletingSmurf: false,
-        error: action.payload
+        error: action.payload.data
       }
     default:
       return state;

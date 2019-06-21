@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getData, addSmurfAction, deleteSmurfAction } from '../actions';
 import Smurfs from './Smurfs';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 /*
  to wire this component up you're going to need a few things.
@@ -45,6 +46,7 @@ class App extends React.Component {
     return (
       <div className="App">
     
+      
       {
         this.props.smurfs.map(smurf => {
         return(
@@ -57,29 +59,33 @@ class App extends React.Component {
         })
       } 
       <form onSubmit = {this.addSmurf}>
-      <input
-      type="text"
-      name="name"
-      value={this.state.name}
-      onChange={this.handleChange}
-      placeholder = 'name'
-      />
-      <input
-      type="text"
-      name="age"
-      value={this.state.age}
-      onChange={this.handleChange}
-      placeholder = 'age'
-      />
-      <input
-      type="text"
-      name="height"
-      value={this.state.height}
-      onChange={this.handleChange}
-      placeholder = 'height'
-    />
-    <button>Add To Village</button>
-      </form>
+        <input
+          type="text"
+          name="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+          placeholder = 'name'
+        />
+        <input
+          type="text"
+          name="age"
+          value={this.state.age}
+          onChange={this.handleChange}
+          placeholder = 'age'
+        />
+        <input
+          type="text"
+          name="height"
+          value={this.state.height}
+          onChange={this.handleChange}
+          placeholder = 'height'
+        />
+        <button>Add To Village</button>
+     </form>
+
+     {
+      this.props.error ? <p>{this.props.error}</p> : <p>Add a Smurf!</p>
+    }
       </div>
     );
   }
