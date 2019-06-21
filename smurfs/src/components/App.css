@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: lightblue;
+  
 }
 form{
   display: flex;
@@ -30,7 +30,7 @@ button:hover{
 .smurf-list{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .smurf-container{
